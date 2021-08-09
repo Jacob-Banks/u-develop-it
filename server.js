@@ -1,6 +1,8 @@
 const express = require("express");
 const db = require("./db/connection");
 const apiRoutes = require("./routes/apiRoutes");
+// router.use(require("./voterRoutes"));
+// router.use(require("./partyRoutes"));
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -11,7 +13,6 @@ app.use(express.json());
 
 // Use apiRoutes
 app.use("/api", apiRoutes);
-router.use(require("./partyRoutes"));
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {
